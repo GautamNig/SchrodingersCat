@@ -153,6 +153,32 @@ export default function CatAnimation({
       {gameState === 'lobby' && (
         <div className="game-controls">
           <button 
+          style={{
+              backgroundColor: '#000000',
+              color: '#ffffff',
+              border: 'none',
+              padding: '12px 24px',
+              fontSize: '16px',
+              fontWeight: '600',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+              minWidth: '200px'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.backgroundColor = '#333333';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.backgroundColor = '#000000';
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.2)';
+            }}
+            onMouseDown={(e) => {
+              e.target.style.transform = 'translateY(0)';
+            }}
             onClick={onStartGame}
             className="start-game-btn"
           >
